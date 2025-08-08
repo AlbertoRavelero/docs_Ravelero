@@ -1,0 +1,1 @@
+Repositorio destinado para las actividades del bootcamp GENERATION
