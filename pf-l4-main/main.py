@@ -9,7 +9,7 @@ def marco_inferior():
     print("╚" + "═" * (ancho - 2) + "╝")
 
 def linea_texto(texto):
-    espacio = ancho - 4 - len(texto)  #define el espacio al tamaño del recuadro, restando los bordes y el largo del texto
+    espacio = ancho - 4 - len(texto)  # Define el espacio al tamaño del recuadro, restando los bordes y el largo del texto
     izq = espacio // 2  # Espacio de margen hacia la izquierda
     der = espacio - izq # Espacio de margen hacia la derecha
     print(f"║ {' ' * izq}{texto}{' ' * der} ║") 
@@ -40,13 +40,13 @@ def modulo(a, b):
 def opLibres():
     while True:
         marco_superior()
-        linea_texto("OPEERACIONES LIBRES")
+        linea_texto("OPERACIONES LIBRES")
         linea_vacia()
-        linea_texto("Ingrese espresión matemática con 3 o mas número")
-        linea_texto("Ejemplo: 2 + 4 / 3")
+        linea_texto("Ingrese espresión matemática con 3 o mas números")
+        linea_texto("Ejemplo: 2 + 4 / 3 * 5")
         linea_vacia()
         linea_texto("Operadores disponibles: + - * / %")
-        linea_texto("1. Calcular expresión")
+        linea_texto("1. Calcular espresión")
         linea_texto("2. Volver al menú principal")
         linea_vacia()
         marco_inferior()
@@ -60,7 +60,7 @@ def opLibres():
             try:
                 expresion = input("║ Ingrese la expresión matemática: ")
                 elementos = expresion.split()
-                # .plit() Método que permite dividir una cadena en partes
+                # .split() Método que divide una cadena en partes
 
                 # Validacion básica
                 if len(elementos) < 5 or len(elementos) % 2 == 0:
@@ -86,14 +86,14 @@ def opLibres():
                             break
                 else: # Solo se ejecuta si el for no se rompió
                     if len(numeros) < 3:
-                        print("║ Error: Se requieren al menos 3 números")
+                        print("║ Error: Formato incorrecto. Use 3+ números y operadores. Ejemplo: 5 + 3 * 2")
                         continue # para volver al inicio del bucle while
 
                     # Realizar cálculos (izquierda a derecha)
                     resultado = numeros [0] # inicializar
                     historial = []
 
-                    for i in range(len(operadores)): # Bucle for, se ejecuta tantas veces como operadores alla
+                    for i in range(len(operadores)): # Bucle for, se ejecuta tantas veces como operadores allá
                         num = numeros[i+1]
                         op = operadores[i]
 
@@ -133,7 +133,7 @@ def opLibres():
 def deci_a_hexa(num):
     return hex(int(num))[2:].upper() 
 # hex() Funcion que convierte a hexadecimal (devuelve formato "oxff")
-# [2:] Elimina los 2 primero caracteres ("ox")
+# [2:] Elimina los 2 primeros caracteres ("ox")
 # .upper() Convierte letras a mayúsculas
 
 def deci_a_bina(num):
@@ -218,14 +218,14 @@ def opBasicas():
 # Conversiones Decimal, Binario, Hexadecimal
 def opConversiones():
     marco_superior()
-    linea_texto("CONVERSIÓN ENTRE SITEMAS")
+    linea_texto("CONVERSIÓN ENTRE SISTEMAS")
     linea_vacia()
     linea_texto("1. Decimal → Hexadecimal y Binario")
     linea_texto("2. Hexadecimal → Decimal y Binario")
     linea_texto("3. Binario → Decimal y Hexadecimal")
     linea_texto("4. Volver al menú principal")
     linea_vacia()
-    ()
+    marco_inferior()
 
     opcion = input("║ Seleccione una opción: ")
     if opcion == "4":
@@ -267,7 +267,7 @@ def opConversiones():
             print("║ Opción no válida")
     
     except ValueError as e:
-        print(f"║ Error: Número no valido")
+        print(f"║ Error: Número no válido")
 
 # Main
 def main():
@@ -282,6 +282,7 @@ def main():
         elif opcion == "3":
             opConversiones()
         elif opcion =="4":
+            linea_vacia()
             print("║ Saliendo del programa...")
             break
         else:
