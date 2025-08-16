@@ -23,7 +23,7 @@ def addmultiplenumbers(numeros):
     Entrada: Lista de números [num1, num2, ...]
     Salida: Suma total (float/int)
     """
-   resultado = sum(numeros)
+   resultado = sum(numeros) 
    return round(numeros,2)
 
 def multiplymultiplenumbers(numeros):
@@ -58,7 +58,7 @@ def menu_incial():
   linea_texto("Calculadora Mejorada")
   linea_vacia()
   linea_texto("1. Sumar múltiples números")
-  linea_texto("2. Multiplicar múltiples número")
+  linea_texto("2. Multiplicar múltiples números")
   linea_texto("3. Verificar si el número es par y entero")
   linea_texto("4. Verificar si es número es entero")
   linea_texto("5. Salir")
@@ -85,7 +85,7 @@ def main():
            resultado = addmultiplenumbers(numeros)
            linea_texto(f"Resultado: {resultado}")
         except ValueError:
-           print("║ Error: Ingrese solo números válidos")
+           linea_texto("Error: Ingrese solo números válidos")
         m_Inferior()
 
      elif opcion == "2":
@@ -96,17 +96,17 @@ def main():
         m_Superior()
         try:
           if not entrada.strip():
-              print("║ No se ingresaron números")
+              linea_texto("No se ingresaron números")
           else:
            numeros = [float(num) for num in entrada.split()]
            resultado = multiplymultiplenumbers(numeros)
            linea_texto(f"Resultado: {resultado}")
         except ValueError:
-           print("║ Error: Ingrese solo números válidos")
+           linea_texto("Error: Ingrese solo números válidos")
         m_Inferior()
 
      elif opcion == "3":
-        num = input("Ingrese un número: ")
+        num = input("║ Ingrese un número: ")
         m_Superior()
         try:
            num = float(num)
@@ -120,7 +120,7 @@ def main():
         m_Inferior()
 
      elif opcion == "4":
-        num = input("Ingrese un número: ")
+        num = input("║ Ingrese un número: ")
         m_Superior()
         try:
            num = float(num)
