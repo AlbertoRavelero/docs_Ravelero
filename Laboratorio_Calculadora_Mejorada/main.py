@@ -24,7 +24,7 @@ def addmultiplenumbers(numeros):
     Salida: Suma total (float/int)
     """
    resultado = sum(numeros) 
-   return round(numeros,2)
+   return resultado
 
 def multiplymultiplenumbers(numeros):
    """
@@ -35,7 +35,7 @@ def multiplymultiplenumbers(numeros):
    total = 1
    for num in numeros:
       total *= num
-   return round(total,2)
+   return total
 
 def isiteven(numero):
    """
@@ -83,7 +83,7 @@ def main():
           else:
            numeros = [float(num) for num in entrada.split()]
            resultado = addmultiplenumbers(numeros)
-           linea_texto(f"Resultado: {resultado}")
+           linea_texto(f"Resultado: {round(resultado,2)}")
         except ValueError:
            linea_texto("Error: Ingrese solo números válidos")
         m_Inferior()
@@ -100,7 +100,7 @@ def main():
           else:
            numeros = [float(num) for num in entrada.split()]
            resultado = multiplymultiplenumbers(numeros)
-           linea_texto(f"Resultado: {resultado}")
+           linea_texto(f"Resultado: {round(resultado,2)}")
         except ValueError:
            linea_texto("Error: Ingrese solo números válidos")
         m_Inferior()
